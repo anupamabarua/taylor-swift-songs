@@ -1,3 +1,5 @@
+from random import randint
+
 try:
     file = open("songs.dat")
 except:
@@ -8,4 +10,11 @@ songs = file.read().splitlines()
 for song in range(len(songs)):
     songs[song] = songs[song].split()
 
-print(songs)
+while True:
+    ask = input("\nDo you want a random Taylor Swift song (y/n)? ")
+    if ask.lower() == "yes" or ask.lower() == "y":
+        indx = randint(0, len(songs))
+        print(f'{songs[indx][0].replace("-", " ")} is from the album {songs[indx][1].replace("-", " ")}, and was made in {songs[indx][2]}.')
+    else:
+        print()
+        break
