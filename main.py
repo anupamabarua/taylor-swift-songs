@@ -18,6 +18,10 @@ while True:
     if ask.lower() == "yes" or ask.lower() == "y":
         indx = randint(0, len(songs)-1)
         print(f'{songs[indx][0].replace("-", " ")} is from the album {songs[indx][1].replace("-", " ")}, and was made in {songs[indx][2]}.')
+        songs.pop(indx)
     else:
-        print()
+        print("Ok, bye\n")
+        break
+    if not songs:
+        print("\nThats all the songs we have\n")
         break
